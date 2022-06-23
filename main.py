@@ -205,6 +205,7 @@ def main():
 
     testsets = []
     for path, data_type in zip(FLAGS.test_path, FLAGS.test_type):
+        print(path)
         features = zp_datastream.load_and_extract_features(path, tokenizer,
                                                            char2word=FLAGS.char2word, data_type=data_type)
         batches = zp_datastream.make_batch(data_type, features, FLAGS.batch_size,
@@ -218,7 +219,7 @@ def main():
 
     # create model
     print('Compiling model')
-    model = zp_model.BertZP.from_pretrained(FLAGS.pretrained_path, char2word=FLAGS.char2word,
+    model = zp_model.BertZP.from_pretrained(FLAGS.pretrained_model, char2word=FLAGS.char2word,
                                             pro_num=len(pro_mapping))
 
     model.to(device)
@@ -265,6 +266,8 @@ def main():
             step_loss['total_loss'] = rates['detection_discount'] * step_loss['detection_loss'] + step_loss[
                 '%s_loss' % batch['type']]
             loss = step_loss['total_loss']
+            if finished_steps % 500 == 0 :
+                print("step: {} total loss: {} detection : {} recovery : {}".format(finished_steps, step_loss['total_loss'].item(),step_loss['detection_loss'].item(),step_loss['recovery_loss'].item()))
 
             if n_gpu > 1:
                 loss = loss.mean()
@@ -282,9 +285,9 @@ def main():
                 scheduler.step()
 
             finished_steps += 1
-            if finished_steps % 100 == 0:
-                print('{} '.format(finished_steps), end="")
-                sys.stdout.flush()
+            #if finished_steps % 100 == 0:
+            #    print('{} '.format(finished_steps), end="")
+            #    sys.stdout.flush()
 
         duration = time.time() - epoch_start
         print('\nTraining loss: %s, time: %.3f sec' % (str(train_loss), duration))
@@ -303,9 +306,9 @@ def main():
             utils.save_config(FLAGS, path_prefix + ".config.json")
         print('-------------')
         log_file.write('-------------\n')
-#         for i,testset in enumerate(testsets):
-#             print('test_set_{}'.format(i))
-        dev_eval(model, FLAGS.model_type, [testsets[0]], device, log_file)
+        for i,testset in enumerate(testsets):
+             print('test_set_{}'.format(i))
+             dev_eval(model, FLAGS.model_type, [testsets[i]], device, log_file)
         print('=============')
         log_file.write('=============\n')
         if torch.cuda.is_available():

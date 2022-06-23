@@ -41,15 +41,17 @@ def add_counts(out, ref, counts):
         if out == ref or tuple(out) in ref:
             counts[0] += 1.0
 
-# def add_counts(out,ref,counts):
-#     counts[ref]['count']+=1
-#     if isinstance(out,list):
-#         out = out[-1]
-#     if out ==ref:
-#         counts[ref]['tp']+=1
-#     else:
-#
-#         counts[out]['fp']+=1
+def acc_counts(out,ref,counts):
+    assert type(out) in (int, list)
+    assert type(ref) in (int, list)
+    if out == ref :
+        if out !=0 and ref !=0:
+            counts['correct'] += 1.0
+            counts['total'] += 1.0
+    else:
+        if out !=0:
+            counts['total'] += 1.0
+
             
 def make_data_recovery(conversation, tokenizer):
     data = {'sentences': [],  # [batch, wordseq]
@@ -103,6 +105,7 @@ def dev_eval(model, model_type, development_sets, device,pro_mapping):
             dev_loss = {'total_loss': 0.0, 'detection_loss': 0.0, 'recovery_loss': 0.0}
             dev_counts = {'detection':[0.0 for _ in range(3)], 'recovery':  [0.0 for _ in range(3)]
                           }
+            acc = {"correct":0.0,"total":0.0}
             start = time.time()
             for step, ori_batch in enumerate(batches):
                 # execution
@@ -173,9 +176,10 @@ def dev_eval(model, model_type, development_sets, device,pro_mapping):
                                    counts=dev_counts['detection'])
                         if data_type == 'recovery':
                             idx=input_zp_cid[i][j]
-                            
                             add_counts(out=recovery_out[i][j], ref=input_zp_cid[i][j],
                                        counts=dev_counts['recovery'])
+                            if sum(recovery_out[i]) !=0:
+                                acc_counts(out=recovery_out[i][j],ref=input_zp_cid[i][j], counts=acc)
                     N += B
             # output and calculate performance
             total_loss = dev_loss['total_loss']
@@ -198,6 +202,8 @@ def dev_eval(model, model_type, development_sets, device,pro_mapping):
                 print('Lable: %d, Recovery F1: %.2f, Precision: %.2f, Recall: %.2f' % (k,100 * rec_f1, 100 * rec_pr, 100 * rec_rc))
 
                 cur_result['key_f1'] = rec_f1
+                final_acc = acc['correct']/acc['total']
+                print("Corrects: {}, Total: {}, Acc: {}".format(acc['correct'],acc['total'],final_acc))
             if len(development_sets) > 1:
                 print('+++++')
 
@@ -303,7 +309,7 @@ if __name__ == '__main__':
     model.to(device)
 
     outputs=dev_eval(model, FLAGS.model_type, devsets, device,pro_mapping)
-    # outputs = inference(model, batches,tokenizer,pro_mapping)
+    #outputs = inference(model, batches,tokenizer,pro_mapping)
     with open(args.out_path,'w',encoding='utf8') as f:
         for line in outputs:
             f.write(line+'\n')

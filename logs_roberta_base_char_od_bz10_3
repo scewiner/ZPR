@@ -1,0 +1,390 @@
+Loading hyperparameters from config_recovery_OD.json
+CUDA_VISIBLE_DEVICES 0
+Runing the model from Song
+Log file path: ./log_base_OD_roberta_2/ZP.recovery_bertchar.log
+device: cuda, n_gpu: 1, grad_accum_steps: 2
+loading tokenizer from pretraining
+Number of predefined pronouns: 12, they are: dict_values([None, '它', '我', '他', '你', '它们', '她', '我们', '你们', '他们', '她们', 'other'])
+Loading data and making batches
+Data type: recovery, char2word: first
+zp_datastream_char.py: for model_type 'bert_char', 'char2word' not in use
+Sentence No. 5957 length 557.
+Sentence No. 5963 length 741.
+Sentence No. 5965 length 763.
+Sentence No. 6216 length 723.
+Sentence No. 7187 length 607.
+Sentence No. 7596 length 558.
+Sentence No. 8623 length 837.
+OOV rate: 0.007052106081021781, 1366.0/193701.0
+Data type: recovery, char2word: first
+zp_datastream_char.py: for model_type 'bert_char', 'char2word' not in use
+OOV rate: 0.03050871425036236, 1726.0/56574.0
+data/BK/test_new.json
+Data type: recovery, char2word: first
+zp_datastream_char.py: for model_type 'bert_char', 'char2word' not in use
+OOV rate: 0.007044193459525403, 179.0/25411.0
+data/BK/WF_in.json
+Data type: recovery, char2word: first
+zp_datastream_char.py: for model_type 'bert_char', 'char2word' not in use
+OOV rate: 0.03050871425036236, 1726.0/56574.0
+Num training examples = 10497
+Num training batches = 2100
+Data option: is_shuffle True, is_sort True, is_batch_mix True
+Compiling model
+Starting the training loop, total steps = 31500
+Current epoch takes 2100 steps
+step: 0 total loss: 2.5434370040893555 detection : 0.909882664680481 recovery : 2.452448844909668
+step: 500 total loss: 0.5501670241355896 detection : 0.33801087737083435 recovery : 0.5163659453392029
+step: 1000 total loss: 0.2964845299720764 detection : 0.1904909312725067 recovery : 0.27743542194366455
+step: 1500 total loss: 0.4030308425426483 detection : 0.262081116437912 recovery : 0.37682273983955383
+step: 2000 total loss: 0.23278093338012695 detection : 0.12834687530994415 recovery : 0.2199462503194809
+
+Training loss: {'total_loss': 1309.100156571716, 'detection_loss': 528.7239387240261, 'recovery_loss': 780.3762156832963}, time: 102.687 sec
+Evaluating on dataset with data_type: recovery
+Loss: 32.16, time: 3.568 sec
+Detection F1: 1.26, Precision: 4.55, Recall: 0.73
+Recovery F1: 0.71, Precision: 10.00, Recall: 0.37
+Saving weights, F1 0.0 (prev_best) < 0.007067137809187279 (cur)
+-------------
+test_set_0
+Evaluating on dataset with data_type: recovery
+Loss: 53.49, time: 3.158 sec
+Detection F1: 25.65, Precision: 67.37, Recall: 15.84
+Recovery F1: 9.01, Precision: 33.87, Recall: 5.20
+test_set_1
+Evaluating on dataset with data_type: recovery
+Loss: 32.16, time: 3.565 sec
+Detection F1: 1.26, Precision: 4.55, Recall: 0.73
+Recovery F1: 0.71, Precision: 10.00, Recall: 0.37
+=============
+Current epoch takes 2100 steps
+step: 2500 total loss: 0.2730661630630493 detection : 0.18109315633773804 recovery : 0.25495684146881104
+step: 3000 total loss: 0.34172940254211426 detection : 0.17566022276878357 recovery : 0.32416337728500366
+step: 3500 total loss: 0.13749589025974274 detection : 0.08145333081483841 recovery : 0.12935055792331696
+step: 4000 total loss: 0.48929139971733093 detection : 0.2620246708393097 recovery : 0.4630889296531677
+
+Training loss: {'total_loss': 923.1702134422958, 'detection_loss': 360.54028080031276, 'recovery_loss': 562.6299327723682}, time: 97.459 sec
+Evaluating on dataset with data_type: recovery
+Loss: 29.43, time: 3.597 sec
+Detection F1: 4.46, Precision: 17.07, Recall: 2.56
+Recovery F1: 3.13, Precision: 10.87, Recall: 1.83
+Saving weights, F1 0.007067137809187279 (prev_best) < 0.031347962382445145 (cur)
+-------------
+test_set_0
+Evaluating on dataset with data_type: recovery
+Loss: 50.02, time: 3.269 sec
+Detection F1: 48.58, Precision: 61.05, Recall: 40.35
+Recovery F1: 36.89, Precision: 48.02, Recall: 29.95
+test_set_1
+Evaluating on dataset with data_type: recovery
+Loss: 29.43, time: 3.591 sec
+Detection F1: 4.46, Precision: 17.07, Recall: 2.56
+Recovery F1: 3.13, Precision: 10.87, Recall: 1.83
+=============
+Current epoch takes 2100 steps
+step: 4500 total loss: 0.07016504555940628 detection : 0.06543314456939697 recovery : 0.06362172961235046
+step: 5000 total loss: 0.37909331917762756 detection : 0.2206954061985016 recovery : 0.35702377557754517
+step: 5500 total loss: 0.35591262578964233 detection : 0.3189888298511505 recovery : 0.32401373982429504
+step: 6000 total loss: 0.1482938826084137 detection : 0.08321615308523178 recovery : 0.1399722695350647
+
+Training loss: {'total_loss': 816.0848619323224, 'detection_loss': 317.0472381040454, 'recovery_loss': 499.0376238762401}, time: 99.442 sec
+Evaluating on dataset with data_type: recovery
+Loss: 27.72, time: 3.596 sec
+Detection F1: 8.59, Precision: 26.42, Recall: 5.13
+Recovery F1: 5.34, Precision: 14.06, Recall: 3.30
+Saving weights, F1 0.031347962382445145 (prev_best) < 0.053412462908011875 (cur)
+-------------
+test_set_0
+Evaluating on dataset with data_type: recovery
+Loss: 46.86, time: 3.184 sec
+Detection F1: 52.28, Precision: 55.07, Recall: 49.75
+Recovery F1: 40.65, Precision: 44.54, Recall: 37.38
+test_set_1
+Evaluating on dataset with data_type: recovery
+Loss: 27.72, time: 3.567 sec
+Detection F1: 8.59, Precision: 26.42, Recall: 5.13
+Recovery F1: 5.34, Precision: 14.06, Recall: 3.30
+=============
+Current epoch takes 2100 steps
+step: 6500 total loss: 0.22752037644386292 detection : 0.12053128331899643 recovery : 0.21546724438667297
+step: 7000 total loss: 0.07296781986951828 detection : 0.05355581268668175 recovery : 0.06761223822832108
+step: 7500 total loss: 0.17235144972801208 detection : 0.07085203379392624 recovery : 0.1652662456035614
+step: 8000 total loss: 0.5898386836051941 detection : 0.34673643112182617 recovery : 0.5551650524139404
+
+Training loss: {'total_loss': 733.9702355712652, 'detection_loss': 289.9828566368669, 'recovery_loss': 443.9873792640865}, time: 98.790 sec
+Evaluating on dataset with data_type: recovery
+Loss: 27.46, time: 3.579 sec
+Detection F1: 14.99, Precision: 25.44, Recall: 10.62
+Recovery F1: 7.16, Precision: 14.44, Recall: 4.76
+Saving weights, F1 0.053412462908011875 (prev_best) < 0.07162534435261708 (cur)
+-------------
+test_set_0
+Evaluating on dataset with data_type: recovery
+Loss: 50.35, time: 3.245 sec
+Detection F1: 54.59, Precision: 50.31, Recall: 59.65
+Recovery F1: 42.46, Precision: 41.41, Recall: 43.56
+test_set_1
+Evaluating on dataset with data_type: recovery
+Loss: 27.46, time: 3.589 sec
+Detection F1: 14.99, Precision: 25.44, Recall: 10.62
+Recovery F1: 7.16, Precision: 14.44, Recall: 4.76
+=============
+Current epoch takes 2100 steps
+step: 8500 total loss: 0.3589816391468048 detection : 0.14249077439308167 recovery : 0.3447325527667999
+step: 9000 total loss: 0.1856682002544403 detection : 0.14228583872318268 recovery : 0.17143961787223816
+step: 9500 total loss: 0.5054612755775452 detection : 0.2550334334373474 recovery : 0.4799579083919525
+step: 10000 total loss: 0.14360883831977844 detection : 0.06650976836681366 recovery : 0.13695785403251648
+
+Training loss: {'total_loss': 654.0301200244576, 'detection_loss': 263.285201263614, 'recovery_loss': 390.74491896270774}, time: 97.501 sec
+Evaluating on dataset with data_type: recovery
+Loss: 26.72, time: 3.685 sec
+Detection F1: 16.59, Precision: 24.82, Recall: 12.45
+Recovery F1: 6.52, Precision: 12.63, Recall: 4.40
+-------------
+test_set_0
+Evaluating on dataset with data_type: recovery
+Loss: 48.24, time: 3.157 sec
+Detection F1: 56.33, Precision: 52.22, Recall: 61.14
+Recovery F1: 43.46, Precision: 43.35, Recall: 43.56
+test_set_1
+Evaluating on dataset with data_type: recovery
+Loss: 26.72, time: 3.559 sec
+Detection F1: 16.59, Precision: 24.82, Recall: 12.45
+Recovery F1: 6.52, Precision: 12.63, Recall: 4.40
+=============
+Current epoch takes 2100 steps
+step: 10500 total loss: 0.07015393674373627 detection : 0.03488050028681755 recovery : 0.0666658878326416
+step: 11000 total loss: 0.19651807844638824 detection : 0.17798008024692535 recovery : 0.17872007191181183
+step: 11500 total loss: 0.055143631994724274 detection : 0.04731821268796921 recovery : 0.050411809235811234
+step: 12000 total loss: 0.07941260933876038 detection : 0.058922942727804184 recovery : 0.07352031767368317
+step: 12500 total loss: 0.24027395248413086 detection : 0.14767393469810486 recovery : 0.22550655901432037
+
+Training loss: {'total_loss': 580.2395191686228, 'detection_loss': 237.00850468780845, 'recovery_loss': 343.2310147534881}, time: 99.099 sec
+Evaluating on dataset with data_type: recovery
+Loss: 27.65, time: 3.595 sec
+Detection F1: 23.00, Precision: 26.17, Recall: 20.51
+Recovery F1: 7.52, Precision: 11.90, Recall: 5.49
+Saving weights, F1 0.07162534435261708 (prev_best) < 0.07518796992481203 (cur)
+-------------
+test_set_0
+Evaluating on dataset with data_type: recovery
+Loss: 51.43, time: 3.199 sec
+Detection F1: 55.44, Precision: 50.72, Recall: 61.14
+Recovery F1: 45.51, Precision: 45.23, Recall: 45.79
+test_set_1
+Evaluating on dataset with data_type: recovery
+Loss: 27.65, time: 3.572 sec
+Detection F1: 23.00, Precision: 26.17, Recall: 20.51
+Recovery F1: 7.52, Precision: 11.90, Recall: 5.49
+=============
+Current epoch takes 2100 steps
+step: 13000 total loss: 0.3117806613445282 detection : 0.18531902134418488 recovery : 0.2932487726211548
+step: 13500 total loss: 0.02632790058851242 detection : 0.06016400083899498 recovery : 0.020311500877141953
+step: 14000 total loss: 0.11690639704465866 detection : 0.07965052127838135 recovery : 0.10894134640693665
+step: 14500 total loss: 0.08560878038406372 detection : 0.10335305333137512 recovery : 0.07527347654104233
+
+Training loss: {'total_loss': 508.2801942778751, 'detection_loss': 211.61504971329123, 'recovery_loss': 296.66514375436236}, time: 100.461 sec
+Evaluating on dataset with data_type: recovery
+Loss: 26.79, time: 3.593 sec
+Detection F1: 21.03, Precision: 27.01, Recall: 17.22
+Recovery F1: 6.12, Precision: 10.08, Recall: 4.40
+-------------
+test_set_0
+Evaluating on dataset with data_type: recovery
+Loss: 50.94, time: 3.174 sec
+Detection F1: 57.01, Precision: 54.79, Recall: 59.41
+Recovery F1: 44.96, Precision: 44.63, Recall: 45.30
+test_set_1
+Evaluating on dataset with data_type: recovery
+Loss: 26.79, time: 3.568 sec
+Detection F1: 21.03, Precision: 27.01, Recall: 17.22
+Recovery F1: 6.12, Precision: 10.08, Recall: 4.40
+=============
+Current epoch takes 2100 steps
+step: 15000 total loss: 0.05407383665442467 detection : 0.04950219392776489 recovery : 0.0491236187517643
+step: 15500 total loss: 0.0845143124461174 detection : 0.035988230258226395 recovery : 0.08091548830270767
+step: 16000 total loss: 0.1258089244365692 detection : 0.13347475230693817 recovery : 0.11246145516633987
+step: 16500 total loss: 0.08651804178953171 detection : 0.029929863288998604 recovery : 0.08352505415678024
+
+Training loss: {'total_loss': 447.02047554496676, 'detection_loss': 189.20515001751482, 'recovery_loss': 257.8153256288497}, time: 100.801 sec
+Evaluating on dataset with data_type: recovery
+Loss: 28.35, time: 3.584 sec
+Detection F1: 24.56, Precision: 26.25, Recall: 23.08
+Recovery F1: 6.76, Precision: 8.77, Recall: 5.49
+-------------
+test_set_0
+Evaluating on dataset with data_type: recovery
+Loss: 57.25, time: 3.175 sec
+Detection F1: 56.07, Precision: 50.60, Recall: 62.87
+Recovery F1: 43.69, Precision: 40.08, Recall: 48.02
+test_set_1
+Evaluating on dataset with data_type: recovery
+Loss: 28.35, time: 3.570 sec
+Detection F1: 24.56, Precision: 26.25, Recall: 23.08
+Recovery F1: 6.76, Precision: 8.77, Recall: 5.49
+=============
+Current epoch takes 2100 steps
+step: 17000 total loss: 0.095309317111969 detection : 0.05602407082915306 recovery : 0.0897069126367569
+step: 17500 total loss: 0.07278680056333542 detection : 0.053158242255449295 recovery : 0.0674709752202034
+step: 18000 total loss: 0.13456763327121735 detection : 0.03492971509695053 recovery : 0.1310746669769287
+step: 18500 total loss: 0.05488547682762146 detection : 0.044067926704883575 recovery : 0.05047868564724922
+
+Training loss: {'total_loss': 387.38776263431646, 'detection_loss': 166.8025311504025, 'recovery_loss': 220.58523169219552}, time: 100.674 sec
+Evaluating on dataset with data_type: recovery
+Loss: 28.03, time: 3.694 sec
+Detection F1: 25.93, Precision: 26.22, Recall: 25.64
+Recovery F1: 7.06, Precision: 9.87, Recall: 5.49
+-------------
+test_set_0
+Evaluating on dataset with data_type: recovery
+Loss: 60.28, time: 3.176 sec
+Detection F1: 56.51, Precision: 51.00, Recall: 63.37
+Recovery F1: 42.09, Precision: 39.69, Recall: 44.80
+test_set_1
+Evaluating on dataset with data_type: recovery
+Loss: 28.03, time: 3.575 sec
+Detection F1: 25.93, Precision: 26.22, Recall: 25.64
+Recovery F1: 7.06, Precision: 9.87, Recall: 5.49
+=============
+Current epoch takes 2100 steps
+step: 19000 total loss: 0.13396421074867249 detection : 0.06200703606009483 recovery : 0.1277635097503662
+step: 19500 total loss: 0.34687530994415283 detection : 0.29330602288246155 recovery : 0.31754469871520996
+step: 20000 total loss: 0.1207941472530365 detection : 0.08015710115432739 recovery : 0.112778440117836
+step: 20500 total loss: 0.04017254337668419 detection : 0.04155106469988823 recovery : 0.036017436534166336
+
+Training loss: {'total_loss': 340.90028148470446, 'detection_loss': 149.46017144457437, 'recovery_loss': 191.44010908468044}, time: 100.507 sec
+Evaluating on dataset with data_type: recovery
+Loss: 29.09, time: 3.563 sec
+Detection F1: 26.83, Precision: 25.00, Recall: 28.94
+Recovery F1: 6.68, Precision: 8.52, Recall: 5.49
+-------------
+test_set_0
+Evaluating on dataset with data_type: recovery
+Loss: 62.60, time: 3.142 sec
+Detection F1: 57.75, Precision: 52.54, Recall: 64.11
+Recovery F1: 42.45, Precision: 39.74, Recall: 45.54
+test_set_1
+Evaluating on dataset with data_type: recovery
+Loss: 29.09, time: 3.550 sec
+Detection F1: 26.83, Precision: 25.00, Recall: 28.94
+Recovery F1: 6.68, Precision: 8.52, Recall: 5.49
+=============
+Current epoch takes 2100 steps
+step: 21000 total loss: 0.13976463675498962 detection : 0.10572561621665955 recovery : 0.1291920691728592
+step: 21500 total loss: 0.18656478822231293 detection : 0.15976306796073914 recovery : 0.17058847844600677
+step: 22000 total loss: 0.057874590158462524 detection : 0.053401533514261246 recovery : 0.05253443866968155
+step: 22500 total loss: 0.17932087182998657 detection : 0.15112321078777313 recovery : 0.1642085462808609
+step: 23000 total loss: 0.11429865658283234 detection : 0.07223626971244812 recovery : 0.1070750281214714
+
+Training loss: {'total_loss': 299.58263085223734, 'detection_loss': 134.14772847865243, 'recovery_loss': 165.43490242087864}, time: 100.639 sec
+Evaluating on dataset with data_type: recovery
+Loss: 29.14, time: 3.566 sec
+Detection F1: 28.29, Precision: 25.67, Recall: 31.50
+Recovery F1: 7.57, Precision: 9.66, Recall: 6.23
+Saving weights, F1 0.07518796992481203 (prev_best) < 0.0757238307349666 (cur)
+-------------
+test_set_0
+Evaluating on dataset with data_type: recovery
+Loss: 68.54, time: 3.177 sec
+Detection F1: 57.54, Precision: 50.95, Recall: 66.09
+Recovery F1: 43.83, Precision: 41.04, Recall: 47.03
+test_set_1
+Evaluating on dataset with data_type: recovery
+Loss: 29.14, time: 3.556 sec
+Detection F1: 28.29, Precision: 25.67, Recall: 31.50
+Recovery F1: 7.57, Precision: 9.66, Recall: 6.23
+=============
+Current epoch takes 2100 steps
+step: 23500 total loss: 0.06372005492448807 detection : 0.06342192739248276 recovery : 0.05737785995006561
+step: 24000 total loss: 0.13593840599060059 detection : 0.0800914466381073 recovery : 0.12792925536632538
+step: 24500 total loss: 0.1352880448102951 detection : 0.08598644286394119 recovery : 0.12668940424919128
+step: 25000 total loss: 0.0725199431180954 detection : 0.05062708631157875 recovery : 0.06745723634958267
+
+Training loss: {'total_loss': 264.2540466012433, 'detection_loss': 120.04446145775728, 'recovery_loss': 144.2095847055025}, time: 100.373 sec
+Evaluating on dataset with data_type: recovery
+Loss: 29.55, time: 3.581 sec
+Detection F1: 28.10, Precision: 25.37, Recall: 31.50
+Recovery F1: 7.61, Precision: 9.77, Recall: 6.23
+Saving weights, F1 0.0757238307349666 (prev_best) < 0.0760626398210291 (cur)
+-------------
+test_set_0
+Evaluating on dataset with data_type: recovery
+Loss: 69.39, time: 3.179 sec
+Detection F1: 57.55, Precision: 51.89, Recall: 64.60
+Recovery F1: 42.46, Precision: 39.96, Recall: 45.30
+test_set_1
+Evaluating on dataset with data_type: recovery
+Loss: 29.55, time: 3.557 sec
+Detection F1: 28.10, Precision: 25.37, Recall: 31.50
+Recovery F1: 7.61, Precision: 9.77, Recall: 6.23
+=============
+Current epoch takes 2100 steps
+step: 25500 total loss: 0.10821839421987534 detection : 0.08756975829601288 recovery : 0.09946142137050629
+step: 26000 total loss: 0.15150383114814758 detection : 0.12231121957302094 recovery : 0.13927270472049713
+step: 26500 total loss: 0.04035666212439537 detection : 0.0673808827996254 recovery : 0.03361857309937477
+step: 27000 total loss: 0.011660527437925339 detection : 0.018736401572823524 recovery : 0.009786887094378471
+
+Training loss: {'total_loss': 250.10758949327283, 'detection_loss': 114.46066745440476, 'recovery_loss': 135.6469221325242}, time: 97.937 sec
+Evaluating on dataset with data_type: recovery
+Loss: 30.22, time: 3.577 sec
+Detection F1: 28.53, Precision: 24.93, Recall: 33.33
+Recovery F1: 5.63, Precision: 6.88, Recall: 4.76
+-------------
+test_set_0
+Evaluating on dataset with data_type: recovery
+Loss: 73.98, time: 3.131 sec
+Detection F1: 56.96, Precision: 51.08, Recall: 64.36
+Recovery F1: 43.36, Precision: 40.04, Recall: 47.28
+test_set_1
+Evaluating on dataset with data_type: recovery
+Loss: 30.22, time: 3.549 sec
+Detection F1: 28.53, Precision: 24.93, Recall: 33.33
+Recovery F1: 5.63, Precision: 6.88, Recall: 4.76
+=============
+Current epoch takes 2100 steps
+step: 27500 total loss: 0.07304290682077408 detection : 0.026991290971636772 recovery : 0.07034377753734589
+step: 28000 total loss: 0.017238419502973557 detection : 0.010832315310835838 recovery : 0.016155188903212547
+step: 28500 total loss: 0.03587125986814499 detection : 0.014606847427785397 recovery : 0.03441057354211807
+step: 29000 total loss: 0.09331336617469788 detection : 0.07873524725437164 recovery : 0.08543983846902847
+
+Training loss: {'total_loss': 215.40018736710772, 'detection_loss': 99.56394352897769, 'recovery_loss': 115.8362438428776}, time: 98.768 sec
+Evaluating on dataset with data_type: recovery
+Loss: 29.73, time: 3.569 sec
+Detection F1: 28.08, Precision: 24.65, Recall: 32.60
+Recovery F1: 9.07, Precision: 11.90, Recall: 7.33
+Saving weights, F1 0.0760626398210291 (prev_best) < 0.09070294784580499 (cur)
+-------------
+test_set_0
+Evaluating on dataset with data_type: recovery
+Loss: 72.66, time: 3.207 sec
+Detection F1: 57.92, Precision: 53.33, Recall: 63.37
+Recovery F1: 44.77, Precision: 44.02, Recall: 45.54
+test_set_1
+Evaluating on dataset with data_type: recovery
+Loss: 29.73, time: 3.575 sec
+Detection F1: 28.08, Precision: 24.65, Recall: 32.60
+Recovery F1: 9.07, Precision: 11.90, Recall: 7.33
+=============
+Current epoch takes 2100 steps
+step: 29500 total loss: 0.06696264445781708 detection : 0.06504352390766144 recovery : 0.060458291321992874
+step: 30000 total loss: 0.17661011219024658 detection : 0.13066838681697845 recovery : 0.16354326903820038
+step: 30500 total loss: 0.0028825667686760426 detection : 0.00706147076562047 recovery : 0.002176419598981738
+step: 31000 total loss: 0.05574743077158928 detection : 0.05965176224708557 recovery : 0.04978225380182266
+
+Training loss: {'total_loss': 195.42034465819597, 'detection_loss': 91.66051451559179, 'recovery_loss': 103.75982991392084}, time: 98.806 sec
+Evaluating on dataset with data_type: recovery
+Loss: 29.59, time: 3.609 sec
+Detection F1: 27.50, Precision: 25.63, Recall: 29.67
+Recovery F1: 6.85, Precision: 9.09, Recall: 5.49
+-------------
+test_set_0
+Evaluating on dataset with data_type: recovery
+Loss: 75.23, time: 3.175 sec
+Detection F1: 58.27, Precision: 56.51, Recall: 60.15
+Recovery F1: 44.50, Precision: 44.95, Recall: 44.06
+test_set_1
+Evaluating on dataset with data_type: recovery
+Loss: 29.59, time: 3.565 sec
+Detection F1: 27.50, Precision: 25.63, Recall: 29.67
+Recovery F1: 6.85, Precision: 9.09, Recall: 5.49
+=============

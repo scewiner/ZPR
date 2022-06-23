@@ -1,0 +1,142 @@
+Loading hyperparameters from config_recovery.json
+CUDA_VISIBLE_DEVICES 0
+Runing the model from Song
+Log file path: logs_base_BK_bert_bz10_1/ZP.recovery_bertchar.log
+device: cuda, n_gpu: 1, grad_accum_steps: 2
+loading tokenizer from pretraining
+Number of predefined pronouns: 11, they are: dict_values([None, '它', '我', '他', '你', '它们', '她', '我们', '你们', '他们', '她们'])
+Loading data and making batches
+Data type: recovery, char2word: first
+zp_datastream_char.py: for model_type 'bert_char', 'char2word' not in use
+Sentence No. 957 length 557.
+Sentence No. 963 length 741.
+Sentence No. 965 length 763.
+Sentence No. 1216 length 723.
+Sentence No. 2187 length 607.
+Sentence No. 2596 length 558.
+Sentence No. 3623 length 837.
+OOV rate: 0.009829700617887592, 1357.0/138051.0
+Data type: recovery, char2word: first
+zp_datastream_char.py: for model_type 'bert_char', 'char2word' not in use
+OOV rate: 0.005591708845504941, 116.0/20745.0
+Data type: recovery, char2word: first
+zp_datastream_char.py: for model_type 'bert_char', 'char2word' not in use
+OOV rate: 0.007044193459525403, 179.0/25411.0
+Data type: recovery, char2word: first
+zp_datastream_char.py: for model_type 'bert_char', 'char2word' not in use
+OOV rate: 0.03050871425036236, 1726.0/56574.0
+Num training examples = 5497
+Num training batches = 1100
+Data option: is_shuffle True, is_sort True, is_batch_mix True
+Compiling model
+Starting the training loop, total steps = 5500
+Current epoch takes 1100 steps
+step: 0 total loss: 3.3324832916259766 detection : 0.43572160601615906 recovery : 3.2889111042022705
+step: 500 total loss: 0.21479076147079468 detection : 0.15974681079387665 recovery : 0.19881607592105865
+step: 1000 total loss: 0.07158810645341873 detection : 0.09793361276388168 recovery : 0.06179474666714668
+
+Training loss: {'total_loss': 392.8092973474413, 'detection_loss': 170.30545249581337, 'recovery_loss': 222.50384477339685}, time: 51.381 sec
+Evaluating on dataset with data_type: recovery
+Loss: 56.82, time: 2.974 sec
+Detection F1: 21.16, Precision: 77.94, Recall: 12.24
+Recovery F1: 29.57, Precision: 52.66, Recall: 20.55
+Saving weights, F1 0.0 (prev_best) < 0.2956810631229236 (cur)
+-------------
+test_set_0
+Evaluating on dataset with data_type: recovery
+Loss: 47.38, time: 3.091 sec
+Detection F1: 21.95, Precision: 67.09, Recall: 13.12
+Recovery F1: 34.63, Precision: 55.14, Recall: 25.25
+test_set_1
+Evaluating on dataset with data_type: recovery
+Loss: 26.70, time: 3.512 sec
+Detection F1: 1.44, Precision: 50.00, Recall: 0.73
+Recovery F1: 0.00, Precision: 0.00, Recall: 0.00
+=============
+Current epoch takes 1100 steps
+step: 1500 total loss: 0.05547899380326271 detection : 0.026507334783673286 recovery : 0.05282825976610184
+step: 2000 total loss: 0.02332811988890171 detection : 0.023720208555459976 recovery : 0.020956099033355713
+
+Training loss: {'total_loss': 232.70147059950978, 'detection_loss': 102.08552256878465, 'recovery_loss': 130.61594770802185}, time: 50.983 sec
+Evaluating on dataset with data_type: recovery
+Loss: 51.39, time: 2.971 sec
+Detection F1: 49.21, Precision: 64.66, Recall: 39.72
+Recovery F1: 40.49, Precision: 49.66, Recall: 34.18
+Saving weights, F1 0.2956810631229236 (prev_best) < 0.4049247606019152 (cur)
+-------------
+test_set_0
+Evaluating on dataset with data_type: recovery
+Loss: 41.76, time: 3.191 sec
+Detection F1: 54.65, Precision: 64.75, Recall: 47.28
+Recovery F1: 41.90, Precision: 48.08, Recall: 37.13
+test_set_1
+Evaluating on dataset with data_type: recovery
+Loss: 24.42, time: 3.547 sec
+Detection F1: 8.51, Precision: 25.00, Recall: 5.13
+Recovery F1: 5.76, Precision: 10.09, Recall: 4.03
+=============
+Current epoch takes 1100 steps
+step: 2500 total loss: 0.10656347870826721 detection : 0.07767344266176224 recovery : 0.09879613667726517
+step: 3000 total loss: 0.009816755540668964 detection : 0.018328120931982994 recovery : 0.007983943447470665
+
+Training loss: {'total_loss': 185.36852673394606, 'detection_loss': 81.72083480563015, 'recovery_loss': 103.64769180759322}, time: 50.709 sec
+Evaluating on dataset with data_type: recovery
+Loss: 48.58, time: 3.120 sec
+Detection F1: 56.51, Precision: 60.96, Recall: 52.66
+Recovery F1: 45.28, Precision: 49.72, Recall: 41.57
+Saving weights, F1 0.4049247606019152 (prev_best) < 0.45283018867924535 (cur)
+-------------
+test_set_0
+Evaluating on dataset with data_type: recovery
+Loss: 43.24, time: 3.124 sec
+Detection F1: 60.38, Precision: 58.29, Recall: 62.62
+Recovery F1: 44.55, Precision: 44.07, Recall: 45.05
+test_set_1
+Evaluating on dataset with data_type: recovery
+Loss: 24.38, time: 3.518 sec
+Detection F1: 21.00, Precision: 27.88, Recall: 16.85
+Recovery F1: 5.93, Precision: 7.04, Recall: 5.13
+=============
+Current epoch takes 1100 steps
+step: 3500 total loss: 0.20283356308937073 detection : 0.1404825747013092 recovery : 0.18878529965877533
+step: 4000 total loss: 0.06666561961174011 detection : 0.06711828708648682 recovery : 0.05995379388332367
+
+Training loss: {'total_loss': 151.1733913361095, 'detection_loss': 68.46979895606637, 'recovery_loss': 82.7035924771335}, time: 50.614 sec
+Evaluating on dataset with data_type: recovery
+Loss: 50.27, time: 2.963 sec
+Detection F1: 56.69, Precision: 60.47, Recall: 53.35
+Recovery F1: 42.38, Precision: 45.72, Recall: 39.49
+-------------
+test_set_0
+Evaluating on dataset with data_type: recovery
+Loss: 44.32, time: 3.096 sec
+Detection F1: 62.06, Precision: 60.81, Recall: 63.37
+Recovery F1: 43.46, Precision: 44.65, Recall: 42.33
+test_set_1
+Evaluating on dataset with data_type: recovery
+Loss: 24.30, time: 3.583 sec
+Detection F1: 28.08, Precision: 29.13, Recall: 27.11
+Recovery F1: 5.41, Precision: 5.71, Recall: 5.13
+=============
+Current epoch takes 1100 steps
+step: 4500 total loss: 0.02410505898296833 detection : 0.02888568490743637 recovery : 0.021216491237282753
+step: 5000 total loss: 0.030963586643338203 detection : 0.04554629698395729 recovery : 0.026408957317471504
+
+Training loss: {'total_loss': 125.03483358258381, 'detection_loss': 58.47069028439, 'recovery_loss': 66.56414338709146}, time: 50.647 sec
+Evaluating on dataset with data_type: recovery
+Loss: 52.83, time: 2.959 sec
+Detection F1: 57.18, Precision: 56.85, Recall: 57.51
+Recovery F1: 47.45, Precision: 47.56, Recall: 47.34
+Saving weights, F1 0.45283018867924535 (prev_best) < 0.474537037037037 (cur)
+-------------
+test_set_0
+Evaluating on dataset with data_type: recovery
+Loss: 47.43, time: 3.166 sec
+Detection F1: 62.32, Precision: 56.29, Recall: 69.80
+Recovery F1: 46.42, Precision: 43.51, Recall: 49.75
+test_set_1
+Evaluating on dataset with data_type: recovery
+Loss: 24.89, time: 3.536 sec
+Detection F1: 30.19, Precision: 28.39, Recall: 32.23
+Recovery F1: 6.24, Precision: 6.25, Recall: 6.23
+=============
